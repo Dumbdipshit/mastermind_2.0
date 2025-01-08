@@ -11,25 +11,29 @@ public class MainGame {
 		Calculator calc =new Calculator();	
 		Random rand = new Random();
 		Scanner input = new Scanner(System.in);	
+		String play = "none";
 		String[] kleuren = {"Rd", "Bl", "Gr", "Gl", "Or", "La"};	
 		String[] code = {"een", "twee", "drie", "vier"};
 		String[] poging = {"een", "twee", "dire", "vier"};
 		int rounds = 1;
-		boolean cont = false;
+		boolean cont = true;
 		boolean won = false;
 		
 	
+		while (cont == true) {
+			rounds = 1;
+			won = false;
+			
 		//hier genereed de code//	
 		for (int i = 0; i < 4; i++) {
 			code[i] = calc.generate();
+			System.out.println(code[i]);
 			}
 
-		
-		while (rounds <= 10 && cont == false) {
+		while (rounds <= 10) {
 			System.out.println("");
 			System.out.println("Ronde: "+rounds);
 			
-			if(cont == false) {
 				//hier is het begin input//
 			for (int i = 0; i < 4; i++) {
 				String string = poging[i];
@@ -55,12 +59,10 @@ public class MainGame {
 				//hier checkt het systeem of jij gewonen hebt//
 				if (poging[0].equals(code[0]) && poging[1].equals(code[1]) && poging[2].equals(code[2]) && poging[3].equals(code[3])) {
 					System.out.println("Goed gedaan je hebt gewonnen");
-					rounds = 10;
-					cont = true;
+					rounds = 11;
 					won = true;
 				}	
-				if (rounds == 10 && won == false) {
-					cont = true;
+				if (rounds == 11 && won == false) {
 					System.out.println("Je hebt verloren");
 					System.out.println("");
 					System.out.println("De code was");
@@ -69,6 +71,20 @@ public class MainGame {
 					System.out.println("Volgende keer beter");
 				}
 			}
+		System.out.println("");
+		System.out.println("Do you want to play again?");
+		System.out.println("Type: Y or N");
+		play = input.nextLine();
+		
+		while (!play.equals("Y") && !play.equals("N")) {
+			System.out.println("Please input a Value that is listed above.");
+			play = input.nextLine();
+		}if (play.equals("N")) {
+			cont = false;
 		}
-}
-}
+		System.out.println();	
+	}System.out.println("GoodBye");
+		
+		}
+	}
+
