@@ -16,15 +16,17 @@ public class MainGame {
 		String[] poging = {"een", "twee", "dire", "vier"};
 		int rounds = 1;
 		boolean cont = false;
+		boolean won = false;
 		
 	
 		//hier genereed de code//	
 		for (int i = 0; i < 4; i++) {
 			code[i] = calc.generate();
+			System.out.println(code[i]);
 			}
 
 		
-		while (rounds <= 10 && cont == false) {
+		while (rounds <= 2 && cont == false) {
 			System.out.println("");
 			System.out.println("Ronde: "+rounds);
 			
@@ -54,10 +56,11 @@ public class MainGame {
 				//hier checkt het systeem of jij gewonen hebt//
 				if (poging[0].equals(code[0]) && poging[1].equals(code[1]) && poging[2].equals(code[2]) && poging[3].equals(code[3])) {
 					System.out.println("Goed gedaan je hebt gewonnen");
-					rounds = 10;
+					rounds = 2;
 					cont = true;
+					won = true;
 				}	
-				else{
+				if (rounds == 2 && won == false) {
 					cont = true;
 					System.out.println("Je hebt verloren");
 					System.out.println("");
