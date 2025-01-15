@@ -30,22 +30,15 @@ public class MainGame {
 			System.out.println(code[i]);
 			}
 
+		//hier checkt de programma of de ronde geindigt is//
 		while (rounds <= 10) {
 			System.out.println("");
 			System.out.println("Ronde: "+rounds);
 			
 				//hier is het begin input//
 			for (int i = 0; i < 4; i++) {
-				String string = poging[i];
-				System.out.println("Raad de kleur van de"+ " " +(i+1)+ "e" + " "+ "positie.");
-				System.out.println("Kies uit: Rd, Bl, Gr, Gl, Or, La");
-				poging[i] = input.nextLine();
 				
-			//hier checkt het of de input geldig is//
-				while (!poging[i].equals("Rd") && !poging[i].equals("Bl") && !poging[i].equals("Gr") && !poging[i].equals("Gl") && !poging[i].equals("Or") && !poging[i].equals("La")) {
-				System.out.println("Kies asjeblieft een mogelijke kleur van de lijst.");
-				poging[i] = input.nextLine();
-			}
+				poging[i]=calc.checkPlayerInput(i);
 				
 				//hier zegt de systeem jouwe input//
 		}		calc.yourInput(poging);

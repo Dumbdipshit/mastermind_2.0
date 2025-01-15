@@ -1,6 +1,7 @@
 package masterMind2;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Calculator extends MainGame {
 
@@ -29,6 +30,23 @@ public class Calculator extends MainGame {
 		System.out.println("Dit is jouw keuze.");
 		System.out.println("--------------------------");
 		System.out.println(poging[0]+" "+poging[1]+" "+poging[2]+" "+poging[3]);
+	}
+	
+	public String checkPlayerInput(int i) {
+		Scanner input = new Scanner(System.in);	
+		String poging ="none";
+		
+		String string = poging;
+		System.out.println("Raad de kleur van de"+ " " +(i+1)+ "e" + " "+ "positie.");
+		System.out.println("Kies uit: Rd, Bl, Gr, Gl, Or, La");
+		poging = input.nextLine();
+		
+	//hier checkt het of de input geldig is//
+		while (!poging.equals("Rd") && !poging.equals("Bl") && !poging.equals("Gr") && !poging.equals("Gl") && !poging.equals("Or") && !poging.equals("La")) {
+		System.out.println("Kies asjeblieft een mogelijke kleur van de lijst.");
+		poging = input.nextLine();
+		}return poging;
+		
 	}
 }
 
