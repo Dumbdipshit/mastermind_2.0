@@ -64,17 +64,7 @@ public class MainGame {
 					System.out.println("Volgende keer beter");
 				}
 			}
-		System.out.println("");
-		System.out.println("Do you want to play again?");
-		System.out.println("Type: Y or N");
-		play = input.nextLine();
-		
-		while (!play.equals("Y") && !play.equals("N")) {
-			System.out.println("Please input a Value that is listed above.");
-			play = input.nextLine();
-		}if (play.equals("N")) {
-			cont = false;
-		}
+			cont=calc.replay();
 		System.out.println();	
 	}System.out.println("GoodBye");
 		

@@ -46,8 +46,25 @@ public class Calculator extends MainGame {
 		System.out.println("Kies asjeblieft een mogelijke kleur van de lijst.");
 		poging = input.nextLine();
 		}return poging;
-		
 	}
+	
+	public boolean replay() {
+		Scanner input = new Scanner(System.in);	
+		String play;
+		
+		System.out.println("");
+		System.out.println("Do you want to play again?");
+		System.out.println("Type: Y or N");
+		play = input.nextLine();
+		
+		while (!play.equals("Y") && !play.equals("N")) {
+			System.out.println("Please input a Value that is listed above.");
+			play = input.nextLine();
+		}
+		
+		return play.equals("Y");
+	}
+	
 }
 
 
