@@ -27,7 +27,6 @@ public class MainGame {
 		//hier genereed de code//	
 		for (int i = 0; i < 4; i++) {
 			code[i] = calc.generate();
-			System.out.println(code[i]);
 			}
 
 		//hier checkt de programma of de ronde geindigt is//
@@ -54,8 +53,7 @@ public class MainGame {
 					System.out.println("Goed gedaan je hebt gewonnen");
 					rounds = 11;
 					won = true;
-				}	
-				if (rounds == 11 && won == false) {
+				}if (rounds == 11 && won == false) {
 					System.out.println("Je hebt verloren");
 					System.out.println("");
 					System.out.println("De code was");
@@ -66,7 +64,7 @@ public class MainGame {
 			}
 			cont=calc.replay();
 		System.out.println();	
-	}System.out.println("GoodBye");
+	}System.out.println("GoodBye");   
 		
 		}
 	}

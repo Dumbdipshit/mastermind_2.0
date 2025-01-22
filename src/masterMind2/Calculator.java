@@ -11,6 +11,8 @@ public class Calculator extends MainGame {
 		Random rand = new Random();
 		
 			code = kleuren[rand.nextInt(4)];
+			
+			System.out.println(code);
 
 		return code;
 	}
